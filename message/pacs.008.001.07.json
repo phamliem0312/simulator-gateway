@@ -1,0 +1,168 @@
+{
+	"Header": {
+		"SenderReference": "0200970442062916500020202199300705",
+		"MessageIdentifier": "pacs.008.001.07",
+		"Format": "MX",
+		"Sender": {
+			"ID": "HLBBVNVN",
+			"Name": ""
+		},
+		"Receiver": {
+			"ID": "NAPASVNV",
+			"Name": "Napas"
+		},
+		"Timestamp": "2020-06-29T16:50:00+07:00",
+		"Signature": ""
+	},
+	"Payload": {
+		"AppHdr": {
+			"Fr": {
+				"FIId": {
+					"FinInstnId": {
+						"ClrSysMmbId": {
+							"MmbId": "HLBBVNVN"
+						}
+					}
+				}
+			},
+			"To": {
+				"FIId": {
+					"FinInstnId": {
+						"ClrSysMmbId": {
+							"MmbId": "NAPASVNV"
+						}
+					}
+				}
+			},
+			"BizMsgIdr": "0200970442062916500020202199100704",
+			"MsgDefIdr": "pacs.008.001.07",
+			"BizSvc": "ACH",
+			"CreDt": "2020-06-29T09:50:00Z"
+		},
+		"Document": {
+			"FIToFICstmrCdtTrf": {
+				"GrpHdr": {
+					"MsgId": "0200970442062916500020202199100704",
+					"CreDtTm": "2020-06-29T16:50:00+07:00",
+					"NbOfTxs": 1,
+					"TtlIntrBkSttlmAmt": {
+						"Ccy": "VND",
+						"Value": "200000.00"
+					},
+					"IntrBkSttlmDt": "2020-06-29",
+					"SttlmInf": {
+						"SttlmMtd": "CLRG"
+					}
+				},
+				"CdtTrfTxInf": [
+					{
+						"PmtId": {
+							"InstrId": "9120209704420629165000202011704103",
+							"EndToEndId": "062904IF_DEP1111aaaaAA402375",
+							"TxId": "0200970442062916500020202199757314"
+						},
+						"PmtTpInf": {
+							"ClrChanl": "RTNS",
+							"SvcLvl": {
+								"Prtry": "0100"
+							},
+							"LclInstrm": {
+								"Prtry": "CSDC"
+							},
+							"CtgyPurp": {
+								"Prtry": "001"
+							}
+						},
+						"IntrBkSttlmAmt": {
+							"Ccy": "VND",
+							"Value": "200000.00"
+						},
+						"ChrgBr": "SLEV",
+						"InstgAgt": {
+							"FinInstnId": {
+								"ClrSysMmbId": {
+									"MmbId": "HLBBVNVN"
+								}
+							}
+						},
+						"InstdAgt": {
+							"FinInstnId": {
+								"ClrSysMmbId": {
+									"MmbId": "VTCBVNVN"
+								}
+							}
+						},
+						"Dbtr": {
+							"Nm": "NGUYEN VAN A",
+							"PstlAdr": {
+								"AdrLine": [
+									"Tang 17-18 Toa Nha Pacific Place, 83B Ly Thuong Kiet",
+									"abc",
+									"abc"
+								]
+							}
+						},
+						"DbtrAcct": {
+							"Id": {
+								"Othr": {
+									"Id": "12010000060831"
+								}
+							},
+							"Tp": {
+								"Prtry": "ACC"
+							}
+						},
+						"DbtrAgt": {
+							"FinInstnId": {
+								"ClrSysMmbId": {
+									"MmbId": "HLBBVNVN"
+								}
+							}
+						},
+						"CdtrAgt": {
+							"FinInstnId": {
+								"ClrSysMmbId": {
+									"MmbId": "VTCBVNVN"
+								}
+							}
+						},
+						"Cdtr": {
+							"Nm": "TRAN THI THANH TRUC",
+							"PstlAdr": {
+								"AdrLine": [
+									"Tang 17-18 Toa Nha Pacific Place, 83B Ly Thuong Kiet",
+									"abc",
+									"abc"
+								]
+							}
+						},
+						"CdtrAcct": {
+							"Id": {
+								"Othr": {
+									"Id": "1600205001646"
+								}
+							},
+							"Tp": {
+								"Prtry": "ACC"
+							}
+						},
+						"InstrForNxtAgt": [
+							{
+								"InstrInf": "/TAM/000020000000/TDT/0629095000/SCR/00000001/MCC/7399/AIC/704/PEM/000/PCD/00/FID/980471/MID/000000000000000"
+							},
+							{
+								"InstrInf": "/MNM/IBT SMARTLINK            HANOI       VNM/SCC/704/BID/970407/FAI/567891234567899/TAI/1600205001646"
+							},
+							{
+								"InstrInf": "/CTR/Phat lenh RT"
+							},
+							{
+								"InstrInf": "/MAC/EAA4BC0000004C12"
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+}
