@@ -1,8 +1,8 @@
 const fs = require('fs');
 const baseUrl = "http://localhost:3001"
-const pacs00200109 = JSON.parse(fs.readFileSync('./message/pacs.002.001.09.json').toString());
-const camt02500104 = JSON.parse(fs.readFileSync('./message/camt.025.001.04.json').toString());
-const ack = JSON.parse(fs.readFileSync('./message/ack.json').toString());
+const pacs00200109 = JSON.parse(fs.readFileSync('../message/pacs.002.001.09.json').toString());
+const camt02500104 = JSON.parse(fs.readFileSync('../message/camt.025.001.04.json').toString());
+const ack = JSON.parse(fs.readFileSync('../message/acknack.json').toString());
 module.exports = {
     pacs00200109: {
         url: baseUrl + "/gateway/v1/single/BANKVNVN/pacs.002.001.09/",
