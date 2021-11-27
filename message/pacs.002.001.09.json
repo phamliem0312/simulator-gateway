@@ -1,0 +1,103 @@
+{
+	"Header": {
+		"SenderReference": "0210970442092115253220206863504349",
+		"MessageIdentifier": "pacs.002.001.09",
+		"Format": "MX",
+		"Sender": {
+			"ID": "NAPASVNV"
+		},
+		"Receiver": {
+			"ID": "BANKVNVN"
+		},
+		"Timestamp": "2020-09-21T15:25:32+07:00",
+		"Signature": ""
+	},
+	"Payload": {
+		"AppHdr": {
+			"Fr": {
+				"FIId": {
+					"FinInstnId": {
+						"ClrSysMmbId": {
+							"MmbId": "HLBBVNVN"
+						}
+					}
+				}
+			},
+			"To": {
+				"FIId": {
+					"FinInstnId": {
+						"ClrSysMmbId": {
+							"MmbId": "NAPASVNV"
+						}
+					}
+				}
+			},
+			"BizMsgIdr": "0210970442092115253220206863500001",
+			"MsgDefIdr": "pacs.002.001.09",
+			"BizSvc": "ACH",
+			"CreDt": "2020-09-21T08:25:32Z"
+		},
+		"Document": {
+			"FIToFIPmtStsRpt": {
+				"GrpHdr": {
+					"MsgId": "0210970442092115253220206863504337",
+					"CreDtTm": "2020-09-21T15:25:32+07:00",
+					"InstgAgt": {
+						"FinInstnId": {
+							"ClrSysMmbId": {
+								"MmbId": "HLBBVNVN"
+							}
+						}
+					},
+					"InstdAgt": {
+						"FinInstnId": {
+							"ClrSysMmbId": {
+								"MmbId": "NAPASVNV"
+							}
+						}
+					}
+				},
+				"OrgnlGrpInfAndSts": {
+					"OrgnlMsgId": "020097041509211524072020p1yE001008",
+					"OrgnlMsgNmId": "pacs.008.001.07",
+					"OrgnlCreDtTm": "2020-09-21T15:24:07+07:00",
+					"StsRsnInf": {
+						"Rsn": {
+							"Prtry": "AUTH"
+						},
+						"AddtlInf": [
+							"/AIR/617984/",
+							"/FAI/105004147305"
+						]
+					}
+				},
+				"TxInfAndSts": [
+					{
+						"OrgnlInstrId": "9120209704150921152407152407001008",
+						"OrgnlEndToEndId": "91202097041509endtoend152407001008",
+						"OrgnlTxId": "020097041509211524072020p1yE001008",
+						"StsRsnInf": {
+							"Rsn": {
+								"Prtry": "AUTH"
+							},
+							"AddtlInf": [
+								"/AIR/617984/",
+								"/FAI/105004147305"
+							]
+						},
+						"InstgAgt": {
+							"FinInstnId": {
+								"ClrSysMmbId": {
+									"MmbId": "ICBVVNVN"
+								}
+							}
+						},
+						"OrgnlTxRef": {
+							"IntrBkSttlmDt": "2020-09-21"
+						}
+					}
+				]
+			}
+		}
+	}
+}

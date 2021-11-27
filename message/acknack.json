@@ -1,0 +1,22 @@
+{
+	"Header": {
+		"SenderReference": "0200970442062916500020202199100596",
+		"MessageIdentifier": "ACK",
+		"Format": "MX",
+		"Sender": {
+			"ID": "BANKVNVN",
+			"Name": ""
+		},
+		"Receiver": {
+			"ID": "NAPASVNV",
+			"Name": "Napas"
+		},
+		"Timestamp": "2020-06-29T16:50:00+07:00",
+		"Signature": "JafB6MIj9ESPthRdR8SiIsnPfNggdnd7H25YNaeVqiw4CV0jQLHts6iFPIz/f/dj+CQLc7vbsYH1Vz81T5aFAzWlF0iHBTWy+J6pTC0/72jwCIH02qJANrIHinhcI2D5awWDdBCnEsYtbGCKDoK5RaRobb3vTIpxChQ5QdTdlpvianPgx9fTVsuH4qj4tLQetDmJ9CcFPScp3QDj216r5UAmS8hdQnl9M8lsO7yngYyR3OCtoH04BJEzNzjHn5kELlf0cOjd7hYPCVEfxfMnuNDigYmf0MTWtImUi+8l043w9wDAYwBuKe4jvsa8ldJ9tmonMBhioBxESfiKwTEU5w=="
+	},
+	"Payload": {
+		"ack_nak": {
+			"type": "ACK"
+		}
+	}
+}

@@ -1,0 +1,69 @@
+{
+    "Header": {
+        "SenderReference": "190315NAPASVNVAACH0001002475",
+        "MessageIdentifier": "camt.025.001.04",
+        "Format": "MX",
+        "Sender": {
+            "ID": "HLBBVNVN",
+            "Name": ""
+        },
+        "Receiver": {
+            "ID": "NAPASVNV",
+            "Name": "Napas"
+        },
+        "Timestamp": "2020-06-29T16:50:00+07:00",
+        "Signature": "JafB6MIj9ESPthRdR8SiIsnPfNggdnd7H25YNaeVqiw4CV0jQLHts6iFPIz/f/dj+CQLc7vbsYH1Vz81T5aFAzWlF0iHBTWy+J6pTC0/72jwCIH02qJANrIHinhcI2D5awWDdBCnEsYtbGCKDoK5RaRobb3vTIpxChQ5QdTdlpvianPgx9fTVsuH4qj4tLQetDmJ9CcFPScp3QDj216r5UAmS8hdQnl9M8lsO7yngYyR3OCtoH04BJEzNzjHn5kELlf0cOjd7hYPCVEfxfMnuNDigYmf0MTWtImUi+8l043w9wDAYwBuKe4jvsa8ldJ9tmonMBhioBxESfiKwTEU5w=="
+    },
+    "Payload": {
+        "AppHdr":{
+            "Fr": {
+                "FIId": {
+                    "FinInstnId": {
+                        "ClrSysMmbId": {
+                            "MmbId": "NAPASVNV"
+                        }
+                    }
+                }
+            },
+            "To": {
+                "FIId": {
+                    "FinInstnId": {
+                        "ClrSysMmbId": {
+                            "MmbId": "BANKVNVN"
+                        }
+                    }
+                }
+            },
+            "BizMsgIdr": "190315NAPASVNVAACH0001002472",
+            "MsgDefIdr": "camt.025.001.04",
+            "BizSvc": "ACH",
+            "CreDt": "2019-04-24T09:21:02Z"
+        },
+        "Document": {
+            "Rct": {
+                "MsgHdr": {
+                    "MsgId": "Q52554/n92",
+                    "CreDtTm": "2019-04-02T11:49:29+07:00",
+                    "ReqTp": {
+                        "Prtry": {
+                            "Id": "NRT"
+                        }
+                    }
+                },
+                "RctDtls": {
+                    "OrgnlMsgId": {
+                        "MsgId": "0200970442062916500020202199100596",
+                        "MsgNmId": "pacs.002.001.09",
+                        "OrgtrNm": "BFTVVNVN"
+                    },
+                    "ReqHdlg":[
+                        {
+                            "StsCd": "ERRC",
+                            "Desc": "EA9 Message subtype is unknown"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
