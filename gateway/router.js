@@ -1,5 +1,11 @@
 const router = require('express').Router();
 const axios = require('axios');
+const net = require('net');
+const client = net.connect({
+    port: 7777
+}, () => {
+    console.log("Connect to Server");
+});
 
 router.put('/api/v1/pacs.008.001.07', (req, res) => {
     const data = req.body;
@@ -19,13 +25,20 @@ router.put('/api/v1/pacs.008.001.07', (req, res) => {
 
 router.put('/api/v1/pacs.002.001.09', (req, res) => {
     const data = req.body;
-
     console.log(JSON.stringify(data, null, 2));
 
-    axios.put("http://localhost:3000/acq/api/v1/pacs.002.001.09", req.body).then(() => {
-        console.log('Send pacs.002.001.09 successfully');
-    }).catch(err => {
-        console.log('Error occured while send pacs.002.001.09');
+    client.write(data.Header.Signature, (err) => {
+        if (err) throw err;
+        client.on('data', (message) => {
+            let isVerifed = JSON.parse(message.toString()).isVerifed;
+            if (isVerifed) {
+                axios.put("http://localhost:3000/acq/api/v1/pacs.002.001.09", req.body).then(() => {
+                    console.log('Send pacs.002.001.09 successfully');
+                }).catch(err => {
+                    console.log('Error occured while send pacs.002.001.09');
+                });
+            }
+        })
     });
 
     res.send({

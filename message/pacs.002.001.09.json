@@ -10,7 +10,7 @@
 			"ID": "BANKVNVN"
 		},
 		"Timestamp": "2020-09-21T15:25:32+07:00",
-		"Signature": ""
+		"Signature": "signature 123456"
 	},
 	"Payload": {
 		"AppHdr": {

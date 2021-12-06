@@ -11,7 +11,7 @@ router.put('/api/v1/pacs.008.001.07/:msgid', (req, res)=>{
         axios.put(config.camt02500104.url, config.camt02500104.data).then(()=>{
             console.log('Send camt.025.001.04 successfully');
             axios.put(config.pacs00200109.url, config.pacs00200109.data).then(()=>{
-                console.log('Send pacs.008.001.07 successfully');
+                console.log('Send pacs.002.001.07 successfully');
             }).catch(err=>{
                 console.log('Error occured while send pacs.008.001.07');
             });
