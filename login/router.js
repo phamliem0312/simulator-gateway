@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
 
         if (results[0].password != password) {
             let loginF = parseInt(results[0].loginF + 1);
-            if (loginF == 3) {
+            if (loginF == 5) {
                 conn.query('UPDATE `users` SET status= ? WHERE username = ?', ['L', username]);
             }else{
                 conn.query('UPDATE `users` SET loginF= ? WHERE username = ?',[loginF, username]);
