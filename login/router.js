@@ -1,19 +1,27 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const mysql = require('mysql2');
+
+const cfg = {
+    hostDb: "localhost",
+    userDb: "phamliem",
+    passwordDb: "061102",
+    databaseName: "my-project-nodejs",
+    tableName: "users"
+}
+
 const conn = mysql.createConnection({
-    host: 'localhost',
-    port: '3306',
-    user: 'phamliem',
-    password: '061102',
-    database: 'my-project-nodejs'
+    host: cfg.hostDb,
+    user: cfg.userDb,
+    password: cfg.passwordDb,
+    database: cfg.databaseName
 });
 
 router.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    conn.query('SELECT * FROM `users` WHERE username = ?',[username], (err, results) => {
+    conn.query('SELECT * FROM `' + cfg.tableName + '` WHERE username = ?',[username], (err, results) => {
         if (err) {
             console.log(err);
             return res.status(404).send("Error occured while query db");
@@ -30,15 +38,15 @@ router.post('/login', (req, res) => {
         if (results[0].password != password) {
             let loginF = parseInt(results[0].loginF + 1);
             if (loginF == 5) {
-                conn.query('UPDATE `users` SET status= ? WHERE username = ?', ['L', username]);
+                conn.query('UPDATE `' + cfg.tableName + '` SET status= ? WHERE username = ?', ['L', username]);
             }else{
-                conn.query('UPDATE `users` SET loginF= ? WHERE username = ?',[loginF, username]);
+                conn.query('UPDATE `' + cfg.tableName + '` SET loginF= ? WHERE username = ?',[loginF, username]);
             }
             
             return res.send("Invalid password");
         }
 
-        conn.query('UPDATE `users` SET loginF= ?  WHERE username = ?',[0, username]);
+        conn.query('UPDATE `' + cfg.tableName + '` SET loginF= ?  WHERE username = ?',[0, username]);
 
         res.send("Login success");
     });
