@@ -1,7 +1,7 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
 const rl = require('readline-sync');
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,5 +14,5 @@ app.use((req, res)=>{
 });
 
 app.listen(PORT, ()=>{
-    console.log("GW is running on port", PORT);
+    console.log("Web is running on port", PORT);
 });

@@ -1,8 +1,14 @@
 const router = require('express').Router();
-const axios = require('axios');
+const Axios = require('axios');
+const axios = Axios.create();
+axios.defaults.timeout = 15000;
+const Redis = require('redis');
+const redis = Redis.createClient();
 
 router.put('/api/v1/pacs.008.001.07', (req, res) => {
     const data = req.body;
+    const getTime = new Date();
+    redis.HSET('message' , data.Header.SenderReference, JSON.stringify({ time: getTime.getTime()}));
 
     console.log(JSON.stringify(data, null, 2));
 
@@ -19,6 +25,7 @@ router.put('/api/v1/pacs.008.001.07', (req, res) => {
 
 router.put('/api/v1/pacs.002.001.09', (req, res) => {
     const data = req.body;
+    redis.del(data.Payload.Document.FIToFIPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId);
 
     console.log(JSON.stringify(data, null, 2));
 
