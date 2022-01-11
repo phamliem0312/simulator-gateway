@@ -18,6 +18,42 @@ const conn = mysql.createConnection({
     database: cfg.databaseName
 });
 
+router.put('/change-pass', (req, res)=>{
+    const newPass = req.body.password;
+    const username = req.body.username;
+
+    conn.query('SELECT * FROM `' + cfg.tableName + '` WHERE username = ?', [username], (err, results)=> {
+        if (err) {
+            console.log(err);
+            return res.status(404).send("Error occured while query db");
+        }
+
+        let passList = Object.values(results[0].passH);
+
+        for (let i = 0; i < passList.length; i++) {
+            if (passList[i] == newPass) {
+                return res.send("Please entry other password!");
+            }
+        }
+
+        let newPassH = {
+            "1": newPass,
+            "2": passList[0],
+            "3": passList[1],
+            "4": passList[2],
+            "5": passList[3]
+        }
+
+        conn.query('UPDATE `' + cfg.tableName + '` SET password= ?, passH= ? WHERE username = ?', [newPass, JSON.stringify(newPassH), username], (err, result => {
+            if (err) {
+                return res.status(400).send("Error occured when update password");
+            }else{
+                return res.send("Update success");
+            }
+        }));
+    });
+})
+
 router.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
